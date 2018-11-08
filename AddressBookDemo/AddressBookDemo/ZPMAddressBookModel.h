@@ -19,7 +19,6 @@
 @property (nonatomic, strong) NSString *birthDay;           //生日
 @property (nonatomic, strong) NSString *headImageUrl;       //头像
 @property (nonatomic, strong) NSMutableArray  *contactList;  //电话列表
-@property (nonatomic, assign) BOOL isNeedDele;             //是否需要删除
 
 -(instancetype)initWithPerson:(ABRecordRef)person;
 @end

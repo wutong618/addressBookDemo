@@ -85,9 +85,7 @@
     for (NSInteger i = 0; i < CFArrayGetCount(allPerson); i++)  {
         ABRecordRef person = CFArrayGetValueAtIndex(allPerson, i);
         ZPMAddressBookModel *personModel =  [[ZPMAddressBookModel alloc] initWithPerson:person];
-        if (!personModel.isNeedDele) {
-            [addressBookArray addObject:personModel];
-        }
+        [addressBookArray addObject:personModel];
     }
     // 释放资源
     if (allPerson) CFRelease(allPerson);

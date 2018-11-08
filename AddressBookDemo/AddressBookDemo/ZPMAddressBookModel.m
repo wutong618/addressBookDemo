@@ -89,13 +89,6 @@
     ABMultiValueRef phoneRef = ABRecordCopyValue(person, kABPersonPhoneProperty);
     for (int i = 0; i < ABMultiValueGetCount(phoneRef); i++)
     {
-        CFStringRef phoneLabel = ABMultiValueCopyLabelAtIndex(phoneRef, i);
-        NSString *phoneLabelString = (__bridge_transfer NSString *)phoneLabel;
-        if ([phoneLabelString containsString:@"钉钉"]) {
-            //如果自定义标签中包含钉钉两个字，则该条数据不会上传到后台
-            self.isNeedDele = YES;
-        }
-        
         NSString *phoneContent = CFBridgingRelease(ABMultiValueCopyValueAtIndex(phoneRef, i))==nil?@"":CFBridgingRelease(ABMultiValueCopyValueAtIndex(phoneRef, i));
         if (StringNotNullAndEmpty(phoneContent)) {
             if ([phoneContent containsString:@"-"]) {

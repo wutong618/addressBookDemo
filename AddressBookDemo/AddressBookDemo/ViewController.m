@@ -56,8 +56,9 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"addressbookCell"];
     }
     ZPMAddressBookModel *model = self.dataArray[indexPath.row];
-    cell.textLabel.text = model.trueName;
     NSDictionary *dic = model.contactList[0];
+    
+    cell.textLabel.text = model.trueName;
     cell.detailTextLabel.text = dic[@"contact"];
     return cell;
 }
